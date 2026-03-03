@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:paddingHorizontal="16dp">
+
+    <!-- Status Bar Space -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="28dp" />
+
+    <!-- Top Bar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical|start"
+            android:src="@drawable/ic_eye_off"
+            android:contentDescription="Hide" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="My courses"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A2E" />
+
+    </FrameLayout>
+
+    <!-- Learned Today Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#F7F7F7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Learned today"
+                android:textSize="12sp"
+                android:textColor="#9E9EB8" />
+
+            <!-- Time Row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="46min"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" / 60min"
+                    android:textSize="13sp"
+                    android:textColor="#9E9EB8"
+                    android:layout_marginStart="4dp" />
+
+            </LinearLayout>
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="10dp"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progress="77"
+                android:progressDrawable="@drawable/progress_bar_orange"
+                android:background="@drawable/progress_background" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Course Cards Grid -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:useDefaultMargins="false">
+
+        <!-- Card 1: Product Design -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFE4EC">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product\nDesign v1.0"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <ProgressBar
+                    android:id="@+id/progress_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@id/title_product"
+                    android:layout_marginTop="16dp"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:progress="58"
+                    android:progressDrawable="@drawable/progress_bar_pink"
+                    android:background="@drawable/progress_background" />
+
+                <TextView
+                    android:id="@+id/label_completed_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progress_product"
+                    android:layout_marginTop="10dp"
+                    android:text="Completed"
+                    android:textSize="11sp"
+                    android:textColor="#9E9EB8" />
+
+                <TextView
+                    android:id="@+id/count_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/label_completed_product"
+                    android:text="14/24"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/label_completed_product"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_play"
+                    android:background="@drawable/circle_pink_button"
+                    android:tint="#FFFFFF"
+                    android:contentDescription="Play" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2: Java Development -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#DCE8FF">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_java"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Java\nDevelopment"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <ProgressBar
+                    android:id="@+id/progress_java"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@id/title_java"
+                    android:layout_marginTop="16dp"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:progress="67"
+                    android:progressDrawable="@drawable/progress_bar_blue"
+                    android:background="@drawable/progress_background" />
+
+                <TextView
+                    android:id="@+id/label_completed_java"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progress_java"
+                    android:layout_marginTop="10dp"
+                    android:text="Completed"
+                    android:textSize="11sp"
+                    android:textColor="#9E9EB8" />
+
+                <TextView
+                    android:id="@+id/count_java"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/label_completed_java"
+                    android:text="12/18"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/label_completed_java"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_play"
+                    android:background="@drawable/circle_blue_button"
+                    android:tint="#FFFFFF"
+                    android:contentDescription="Play" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3: Visual Design (spans full row) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#B2D8D0">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_visual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visual Design"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <ProgressBar
+                    android:id="@+id/progress_visual"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@id/title_visual"
+                    android:layout_marginTop="16dp"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:progress="63"
+                    android:progressDrawable="@drawable/progress_bar_teal"
+                    android:background="@drawable/progress_background" />
+
+                <TextView
+                    android:id="@+id/label_completed_visual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progress_visual"
+                    android:layout_marginTop="10dp"
+                    android:text="Completed"
+                    android:textSize="11sp"
+                    android:textColor="#5A7A75" />
+
+                <TextView
+                    android:id="@+id/count_visual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/label_completed_visual"
+                    android:text="10/16"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E" />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/label_completed_visual"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_play"
+                    android:background="@drawable/circle_teal_button"
+                    android:contentDescription="Play"
+                    app:tint="#FFFFFF" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</LinearLayout>
