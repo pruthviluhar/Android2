@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Soft background blob -->
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#EEF0FF" />
+            <size android:width="180dp" android:height="150dp" />
+        </shape>
+    </item>
+
+    <!-- Small cloud left -->
+    <item
+        android:gravity="top|start"
+        android:left="10dp"
+        android:top="20dp">
+        <shape android:shape="oval">
+            <solid android:color="#DDE2FF" />
+            <size android:width="50dp" android:height="30dp" />
+        </shape>
+    </item>
+
+    <!-- Small cloud right -->
+    <item
+        android:gravity="top|end"
+        android:right="10dp"
+        android:top="10dp">
+        <shape android:shape="oval">
+            <solid android:color="#DDE2FF" />
+            <size android:width="40dp" android:height="25dp" />
+        </shape>
+    </item>
+
+</layer-list>
